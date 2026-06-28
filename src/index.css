@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(37, 37, 37);
+  color: white;
+  color-scheme: dark;
+}
+
+button {
+  cursor: pointer;
+}
