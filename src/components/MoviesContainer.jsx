@@ -1,6 +1,6 @@
 function MoviesContainer({ children }) {
   return (
-    <div className="flex justify-evenly items-center flex-wrap flex-row my-10">
+    <div className="mt-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       {children}
     </div>
   );

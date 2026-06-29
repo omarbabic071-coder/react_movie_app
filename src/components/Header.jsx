@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function Header({ setTitle, fetchData, title }) {
-  let [enteredTitle, setEnteredTitle] = useState("mom");
+function Header({ setTitle, fetchData, setMovies }) {
+  const [enteredTitle, setEnteredTitle] = useState("fight");
 
   const handleTitleChange = (event) => {
     setEnteredTitle(event.target.value);
@@ -9,8 +9,8 @@ function Header({ setTitle, fetchData, title }) {
 
   const searchMovie = () => {
     setTitle(enteredTitle);
-    fetchData(title).then((data) => {
-      console.log(data);
+    fetchData(enteredTitle).then((data) => {
+      setMovies(data?.results || []);
     });
   };
 

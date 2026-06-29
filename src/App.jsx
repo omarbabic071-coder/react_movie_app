@@ -7,15 +7,31 @@ import { useEffect, useState } from "react";
 import fetchData from "./api";
 
 function App() {
-  let [title, setTitle] = useState("");
+  const [title, setTitle] = useState("");
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {}, [title]);
+
   return (
     <>
-      <Header setTitle={setTitle} title={title} fetchData={fetchData} />
+      <Header
+        setTitle={setTitle}
+        title={title}
+        fetchData={fetchData}
+        setMovies={setMovies}
+      />
       <HeroSection />
       <MoviesContainer>
-        <MovieCard src="https://placehold.co/200x356" />
+        {movies.map((movie, i) => {
+          return (
+            <MovieCard
+              key={i}
+              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              title={movie.title}
+              rating={movie.vote_average}
+            />
+          );
+        })}
       </MoviesContainer>
     </>
   );
