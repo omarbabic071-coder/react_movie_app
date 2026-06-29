@@ -1,5 +1,5 @@
 function HeroSection({
-  src = "https://placehold.co/600x400",
+  src = "https://placehold.co/200  ",
   title = "",
   desc = "",
 }) {
