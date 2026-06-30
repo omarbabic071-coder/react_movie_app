@@ -25,9 +25,11 @@ function HeroSection() {
         alt={trendingMovies[idx].title}
         className="rounded-2xl h-150 w-auto object-cover shrink-0 m-0"
       />
-      <div className="flex flex-col items-center p-5 flex-1">
-        <p className="font-bold text-4xl">{trendingMovies[idx].title}</p>
-        <p className="text-justify mt-5">{trendingMovies[idx].overview}</p>
+      <div className="flex flex-col items-center p-5 flex-1 ">
+        <p className="font-bold text-4xl text-center">
+          {trendingMovies[idx].title}
+        </p>
+        <p className="mt-5">{trendingMovies[idx].overview}</p>
       </div>
 
       <div className="flex flex-col items-center gap-5 max-h-150 overflow-y-auto pr-2 shrink-0 scrollbar-gutter-auto ">

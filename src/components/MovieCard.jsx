@@ -2,9 +2,13 @@ function MovieCard({
   src = "https://placehold.co/600x400",
   title = "fdsdfsdsfa",
   rating = 0,
+  func = null,
 }) {
   return (
-    <div className="flex flex-col items-center w-full max-w-60 bg-black/50 p-0 pb-3 rounded-2xl ">
+    <button
+      onClick={func}
+      className="flex flex-col items-center w-full max-w-60 bg-black/50 p-0 pb-3 rounded-2xl "
+    >
       <img
         src={src}
         alt={title}
@@ -13,7 +17,7 @@ function MovieCard({
       />
       <p className="font-bold font-sans my-2 text-xl text-center ">{title}</p>
       <p className="text-gray-500 my-0.5">{Number(rating).toFixed(1)}</p>
-    </div>
+    </button>
   );
 }
 
