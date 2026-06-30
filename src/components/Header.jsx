@@ -1,15 +1,16 @@
 import { useState } from "react";
+import { searchMovies } from "../api";
 
-function Header({ setTitle, fetchData, setMovies }) {
+function Header({ setTitle, setMovies }) {
   const [enteredTitle, setEnteredTitle] = useState("fight");
 
   const handleTitleChange = (event) => {
     setEnteredTitle(event.target.value);
   };
 
-  const searchMovie = () => {
+  const getMovies = () => {
     setTitle(enteredTitle);
-    fetchData(enteredTitle).then((data) => {
+    searchMovies(enteredTitle).then((data) => {
       setMovies(data?.results || []);
     });
   };
@@ -25,7 +26,7 @@ function Header({ setTitle, fetchData, setMovies }) {
       />
       <button
         className="rounded border border-white px-2 py-1 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 ease-in-out"
-        onClick={searchMovie}
+        onClick={getMovies}
       >
         Search
       </button>

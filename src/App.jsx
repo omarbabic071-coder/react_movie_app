@@ -3,24 +3,17 @@ import MovieCard from "./components/MovieCard";
 import HeroSection from "./components/HeroSection";
 import MoviesContainer from "./components/MoviesContainer";
 // import { useState } from "react";
-import { useEffect, useState } from "react";
-import fetchData from "./api";
+import { useState } from "react";
 
 function App() {
   const [title, setTitle] = useState("");
   const [movies, setMovies] = useState([]);
-
-  useEffect(() => {}, [title]);
-
   return (
     <>
-      <Header
-        setTitle={setTitle}
-        title={title}
-        fetchData={fetchData}
-        setMovies={setMovies}
-      />
-      <HeroSection />
+      <Header setTitle={setTitle} title={title} setMovies={setMovies} />
+      <div className="flex justify-center items-center">
+        <HeroSection />
+      </div>
       <MoviesContainer>
         {movies.map((movie, i) => {
           return (
